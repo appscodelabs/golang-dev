@@ -5,8 +5,10 @@ RUN set -x \
 
 RUN set -x                                        \
   && export GO111MODULE=on                        \
+  && export GOBIN=/usr/local/bin                  \
   && go get -u golang.org/x/tools/cmd/goimports   \
   && go get -u github.com/onsi/ginkgo/ginkgo      \
+  && export GOBIN=                                \
   && export GO111MODULE=auto                      \
   && rm -rf go.mod go.sum
 

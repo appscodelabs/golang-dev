@@ -4,9 +4,12 @@ RUN set -x \
   && apt-get update \
   && apt-get install -y --no-install-recommends ca-certificates wget git bash mercurial
 
-RUN export GO111MODULE=on                         \
+RUN set -x                                        \
+  && export GO111MODULE=on                        \
+  && export GOBIN=/usr/local/bin                  \
   && go get -u golang.org/x/tools/cmd/goimports   \
   && go get -u github.com/onsi/ginkgo/ginkgo      \
+  && export GOBIN=                                \
   && export GO111MODULE=auto                      \
   && rm -rf go.mod go.sum
 
