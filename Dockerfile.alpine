@@ -1,0 +1,13 @@
+FROM golang:1.12.5-alpine
+
+RUN set -x \
+  && apk add --update ca-certificates wget git bash mercurial
+
+RUN set -x                                        \
+  && export GO111MODULE=on                        \
+  && go get -u golang.org/x/tools/cmd/goimports   \
+  && go get -u github.com/onsi/ginkgo/ginkgo      \
+  && export GO111MODULE=auto                      \
+  && rm -rf go.mod go.sum
+
+COPY reimport.py /usr/local/bin/reimport.py
