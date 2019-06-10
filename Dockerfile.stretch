@@ -8,7 +8,7 @@ RUN set -x                                        \
   && export GO111MODULE=on                        \
   && export GOBIN=/usr/local/bin                  \
   && go get -u golang.org/x/tools/cmd/goimports   \
-  && go get github.com/golangci/golangci-lint/cmd/golangci-lint@692dacb773b703162c091c2d8c59f9cd2d6801db \
+  && go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.17.1 \
   && go get -u github.com/onsi/ginkgo/ginkgo      \
   && export GOBIN=                                \
   && export GO111MODULE=auto                      \
