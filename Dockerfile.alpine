@@ -1,7 +1,7 @@
 FROM golang:1.12.6-alpine
 
 RUN set -x \
-  && apk add --update ca-certificates wget git bash mercurial
+  && apk add --update ca-certificates wget git bash mercurial upx
 
 RUN set -x                                        \
   && export GO111MODULE=on                        \

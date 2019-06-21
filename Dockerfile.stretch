@@ -2,7 +2,7 @@ FROM golang:1.12.6-stretch
 
 RUN set -x \
   && apt-get update \
-  && apt-get install -y --no-install-recommends ca-certificates wget git bash mercurial
+  && apt-get install -y --no-install-recommends ca-certificates wget git bash mercurial upx
 
 RUN set -x                                        \
   && export GO111MODULE=on                        \
