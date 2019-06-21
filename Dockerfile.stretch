@@ -2,7 +2,13 @@ FROM golang:1.12.6-stretch
 
 RUN set -x \
   && apt-get update \
-  && apt-get install -y --no-install-recommends ca-certificates wget git bash mercurial upx
+  && apt-get install -y --no-install-recommends ca-certificates wget git bash mercurial xz-utils
+
+RUN set -x \
+  && wget https://github.com/upx/upx/releases/download/v3.95/upx-3.95-amd64_linux.tar.xz \
+  && tar -xf upx-3.95-amd64_linux.tar.xz \
+  && mv upx-3.95-amd64_linux/upx /usr/local/bin \
+  && rm -rf upx-3.95-amd64_linux upx-3.95-amd64_linux.tar.xz
 
 RUN set -x                                        \
   && export GO111MODULE=on                        \
