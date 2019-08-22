@@ -24,3 +24,4 @@ RUN set -x                                        \
   && rm -rf go.mod go.sum /go/pkg/mod
 
 COPY reimport.py /usr/local/bin/reimport.py
+COPY reimport3.py /usr/local/bin/reimport3.py
