@@ -2,7 +2,7 @@ FROM golang:1.12.9-stretch
 
 RUN set -x \
   && apt-get update \
-  && apt-get install -y --no-install-recommends ca-certificates wget git bash mercurial xz-utils
+  && apt-get install -y --no-install-recommends ca-certificates wget git bash mercurial bzr xz-utils
 
 RUN set -x \
   && wget https://github.com/upx/upx/releases/download/v3.95/upx-3.95-amd64_linux.tar.xz \
