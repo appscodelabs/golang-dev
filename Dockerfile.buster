@@ -1,8 +1,8 @@
-FROM golang:1.12.12-stretch
+FROM golang:1.12.12-buster
 
 RUN set -x \
   && apt-get update \
-  && apt-get install -y --no-install-recommends ca-certificates wget git bash mercurial bzr xz-utils socat build-essential
+  && apt-get install -y --no-install-recommends ca-certificates wget git bash mercurial bzr xz-utils socat build-essential protobuf-compiler
 
 RUN set -x \
   && wget https://github.com/upx/upx/releases/download/v3.95/upx-3.95-amd64_linux.tar.xz \
@@ -29,34 +29,16 @@ RUN set -x                                        \
 COPY reimport.py /usr/local/bin/reimport.py
 COPY reimport3.py /usr/local/bin/reimport3.py
 
-# RUN set -x \
-#   && apt-get update \
-#   && apt-get install -y --no-install-recommends unzip automake libtool apt-utils
-#
-# # install protoc
-# RUN set -x \
-#   && mkdir -p /opt/protoc \
-#   && cd /opt/protoc \
-#   && curl -fsSOL https://github.com/google/protobuf/archive/v3.6.1.tar.gz \
-#   && tar -xzvf v3.6.1.tar.gz --strip-component=1 \
-#   && rm v3.6.1.tar.gz \
-#   && ./autogen.sh \
-#   && ./configure \
-#   && make \
-#   && make check \
-#   && make install \
-#   && ldconfig
-#
-# # install protobuf
-# RUN mkdir -p /go/src/github.com/golang \
-#   && cd /go/src/github.com/golang \
-#   && rm -rf protobuf \
-#   && git clone https://github.com/golang/protobuf.git \
-#   && mkdir -p /go/src/google.golang.org/genproto \
-#   && cd /go/src/google.golang.org \
-#   && git clone https://github.com/googleapis/go-genproto.git genproto \
-#   && cd /go/src/google.golang.org/genproto \
-#   && git checkout b515fa19cec88c32f305a962f34ae60068947aea \
-#   && cd /go/src/github.com/golang/protobuf \
-#   && git checkout v1.2.0 \
-#   && go install ./...
+# install protobuf
+RUN mkdir -p /go/src/github.com/golang \
+  && cd /go/src/github.com/golang \
+  && rm -rf protobuf \
+  && git clone https://github.com/golang/protobuf.git \
+  && mkdir -p /go/src/google.golang.org/genproto \
+  && cd /go/src/google.golang.org \
+  && git clone https://github.com/googleapis/go-genproto.git genproto \
+  && cd /go/src/google.golang.org/genproto \
+  && git checkout b515fa19cec88c32f305a962f34ae60068947aea \
+  && cd /go/src/github.com/golang/protobuf \
+  && git checkout v1.2.0 \
+  && go install ./...

@@ -1,7 +1,7 @@
 FROM golang:1.12.12-alpine
 
 RUN set -x \
-  && apk add --no-cache --update ca-certificates wget git bash mercurial bzr upx socat gcc musl-dev
+  && apk add --no-cache --update ca-certificates wget git bash mercurial bzr upx socat gcc musl-dev protobuf
 
 RUN set -x                                        \
   && export GO111MODULE=on                        \
@@ -21,3 +21,17 @@ RUN set -x                                        \
 
 COPY reimport.py /usr/local/bin/reimport.py
 COPY reimport3.py /usr/local/bin/reimport3.py
+
+# install protobuf
+RUN mkdir -p /go/src/github.com/golang \
+  && cd /go/src/github.com/golang \
+  && rm -rf protobuf \
+  && git clone https://github.com/golang/protobuf.git \
+  && mkdir -p /go/src/google.golang.org/genproto \
+  && cd /go/src/google.golang.org \
+  && git clone https://github.com/googleapis/go-genproto.git genproto \
+  && cd /go/src/google.golang.org/genproto \
+  && git checkout b515fa19cec88c32f305a962f34ae60068947aea \
+  && cd /go/src/github.com/golang/protobuf \
+  && git checkout v1.2.0 \
+  && go install ./...
