@@ -1,4 +1,4 @@
-FROM golang:1.12.13-buster
+FROM golang:1.13.4-buster
 
 RUN set -x \
   && apt-get update \
@@ -16,8 +16,8 @@ RUN set -x                                        \
   && go get -u golang.org/x/tools/cmd/goimports   \
   && go get -u github.com/onsi/ginkgo/ginkgo@v1.10.1 \
   && go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.21.0 \
-  && go get github.com/appscodelabs/gh-tools@v0.1.0 \
-  && go get github.com/appscodelabs/hugo-tools@v0.2.4 \
+  && go get github.com/appscodelabs/gh-tools@v0.1.2 \
+  && go get github.com/appscodelabs/hugo-tools@v0.2.6 \
   && go get github.com/appscodelabs/ltag@v0.1.1 \
   && go get github.com/vbatts/git-validation@master \
   && go get -u github.com/mvdan/sh/cmd/shfmt \
@@ -38,7 +38,7 @@ RUN mkdir -p /go/src/github.com/golang \
   && cd /go/src/google.golang.org \
   && git clone https://github.com/googleapis/go-genproto.git genproto \
   && cd /go/src/google.golang.org/genproto \
-  && git checkout b515fa19cec88c32f305a962f34ae60068947aea \
+  && git checkout 54afdca5d873 \
   && cd /go/src/github.com/golang/protobuf \
-  && git checkout v1.2.0 \
+  && git checkout v1.3.1 \
   && go install ./...
