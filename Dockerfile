@@ -42,3 +42,10 @@ RUN mkdir -p /go/src/github.com/golang \
   && cd /go/src/github.com/golang/protobuf \
   && git checkout v1.2.0 \
   && go install ./...
+
+RUN set -x                                        \
+  && wget https://dl.k8s.io/$(curl -fsSL https://storage.googleapis.com/kubernetes-release/release/stable.txt)/kubernetes-client-linux-amd64.tar.gz \
+  && tar -xzvf kubernetes-client-linux-amd64.tar.gz \
+  && mv kubernetes/client/bin/kubectl /usr/bin/kubectl \
+  && chmod +x /usr/bin/kubectl \
+  && rm -rf kubernetes kubernetes-client-linux-amd64.tar.gz
