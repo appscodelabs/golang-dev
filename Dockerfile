@@ -2,7 +2,7 @@ FROM golang:1.13.5-buster
 
 RUN set -x \
   && apt-get update \
-  && apt-get install -y --no-install-recommends ca-certificates wget git bash mercurial bzr xz-utils socat build-essential protobuf-compiler upx \
+  && apt-get install -y --no-install-recommends apt-utils ca-certificates wget git bash mercurial bzr xz-utils socat build-essential protobuf-compiler upx \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man /tmp/*
 
 # install protobuf
