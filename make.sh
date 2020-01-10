@@ -1,5 +1,5 @@
 #!/bin/bash
 set -xeuo pipefail
 
-docker build --pull -t appscode/golang-dev:1.13.5 -f Dockerfile .
-docker push appscode/golang-dev:1.13.5
+docker build --pull -t appscode/golang-dev:1.13.6 -f Dockerfile .
+docker push appscode/golang-dev:1.13.6
