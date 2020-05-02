@@ -27,7 +27,7 @@ RUN set -x                                        \
   && go get github.com/appscodelabs/ltag@v0.1.1 \
   && go get github.com/vbatts/git-validation@master \
   && go get mvdan.cc/sh/v3/cmd/shfmt@v3.1.0 \
-  && go get kmodules.xyz/chart-doc-gen@v0.2.1 \
+  && go get kmodules.xyz/chart-doc-gen@v0.2.2 \
   && go get github.com/go-bindata/go-bindata/go-bindata@ee3c2418e3682cc4a4e6c5dd1b32d0b98f7e2c55 \
   && export GOBIN=                                \
   && export GO111MODULE=auto                      \
