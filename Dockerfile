@@ -21,7 +21,7 @@ RUN set -x                                        \
   && export GOBIN=/usr/local/bin                  \
   && go get -u golang.org/x/tools/cmd/goimports   \
   && go get github.com/onsi/ginkgo/ginkgo@v1.12.0 \
-  && go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.25.0 \
+  && go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.27.0 \
   && go get github.com/appscodelabs/gh-tools@v0.1.2 \
   && go get github.com/appscodelabs/hugo-tools@v0.2.8 \
   && go get github.com/appscodelabs/ltag@v0.1.1 \
