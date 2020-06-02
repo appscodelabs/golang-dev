@@ -1,4 +1,4 @@
-FROM golang:1.14.3-buster
+FROM golang:1.14.4
 
 RUN set -x \
   && apt-get update \
