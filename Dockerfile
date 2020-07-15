@@ -1,4 +1,4 @@
-FROM golang:1.14.4
+FROM golang:1.14.5
 
 RUN set -x \
   && apt-get update \
@@ -21,10 +21,10 @@ RUN set -x                                        \
   && export GOBIN=/usr/local/bin                  \
   && go get -u golang.org/x/tools/cmd/goimports   \
   && go get github.com/onsi/ginkgo/ginkgo@v1.12.0 \
-  && go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.27.0 \
-  && go get github.com/appscodelabs/gh-tools@v0.1.2 \
-  && go get github.com/appscodelabs/hugo-tools@v0.2.8 \
-  && go get github.com/appscodelabs/ltag@v0.1.1 \
+  && go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.28.3 \
+  && go get github.com/appscodelabs/gh-tools@v0.2.7 \
+  && go get github.com/appscodelabs/hugo-tools@v0.2.13 \
+  && go get github.com/appscodelabs/ltag@v0.2.0 \
   && go get github.com/vbatts/git-validation@master \
   && go get mvdan.cc/sh/v3/cmd/shfmt@v3.1.0 \
   && go get kubepack.dev/chart-doc-gen@v0.3.0 \
