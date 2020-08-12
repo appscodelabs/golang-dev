@@ -1,4 +1,4 @@
-FROM golang:1.14.7
+FROM golang:1.15.0
 
 RUN set -x \
   && apt-get update \
@@ -20,8 +20,8 @@ RUN set -x                                        \
   && export GO111MODULE=on                        \
   && export GOBIN=/usr/local/bin                  \
   && go get -u golang.org/x/tools/cmd/goimports   \
-  && go get github.com/onsi/ginkgo/ginkgo@v1.12.0 \
-  && go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.28.3 \
+  && go get github.com/onsi/ginkgo/ginkgo@v1.14.0 \
+  && go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.30.0 \
   && go get github.com/appscodelabs/gh-tools@v0.2.7 \
   && go get github.com/appscodelabs/hugo-tools@v0.2.13 \
   && go get github.com/appscodelabs/ltag@v0.2.0 \
