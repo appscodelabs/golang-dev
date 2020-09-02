@@ -15,7 +15,7 @@ function semverParseInto() {
 }
 
 
-TAG=1.15.0
+TAG=1.15.1
 
 semverParseInto $TAG MAJOR MINOR PATCH SPECIAL
 Mm=${MAJOR}.${MINOR}
