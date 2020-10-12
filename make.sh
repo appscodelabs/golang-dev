@@ -16,12 +16,13 @@ function semverParseInto() {
 
 
 TAG=1.14.9
+REGISTRY=${REGISTRY:-appscode}
 
 semverParseInto $TAG MAJOR MINOR PATCH SPECIAL
 Mm=${MAJOR}.${MINOR}
 
-docker build --pull -t appscode/golang-dev:$TAG -f Dockerfile .
-docker push appscode/golang-dev:$TAG
+docker build --pull -t $REGISTRY/golang-dev:$TAG -f Dockerfile .
+docker push $REGISTRY/golang-dev:$TAG
 
-docker tag appscode/golang-dev:$TAG appscode/golang-dev:$Mm
-docker push appscode/golang-dev:$Mm
+docker tag $REGISTRY/golang-dev:$TAG $REGISTRY/golang-dev:$Mm
+docker push $REGISTRY/golang-dev:$Mm

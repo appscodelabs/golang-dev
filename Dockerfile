@@ -1,5 +1,7 @@
 FROM golang:1.14.9
 
+LABEL org.opencontainers.image.source https://github.com/appscodelabs/golang-dev
+
 RUN set -x \
   && apt-get update \
   && apt-get install -y --no-install-recommends apt-utils ca-certificates wget git bash mercurial bzr xz-utils socat build-essential protobuf-compiler upx \
