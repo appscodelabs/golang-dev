@@ -22,10 +22,10 @@ RUN set -x                                        \
   && export GO111MODULE=on                        \
   && export GOBIN=/usr/local/bin                  \
   && go get -u golang.org/x/tools/cmd/goimports   \
-  && go get github.com/onsi/ginkgo/ginkgo@v1.14.1 \
+  && go get github.com/onsi/ginkgo/ginkgo@v1.15.0 \
   && go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.31.0 \
-  && go get github.com/appscodelabs/gh-tools@v0.2.7 \
-  && go get github.com/appscodelabs/hugo-tools@v0.2.16 \
+  && go get github.com/appscodelabs/gh-tools@v0.2.10 \
+  && go get github.com/appscodelabs/hugo-tools@v0.2.20 \
   && go get github.com/appscodelabs/ltag@v0.2.0 \
   && go get github.com/vbatts/git-validation@master \
   && go get mvdan.cc/sh/v3/cmd/shfmt@v3.1.2 \
