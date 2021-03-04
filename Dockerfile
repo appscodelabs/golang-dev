@@ -45,3 +45,6 @@ RUN set -x                                        \
   && mv kubernetes/client/bin/kubectl /usr/bin/kubectl \
   && chmod +x /usr/bin/kubectl \
   && rm -rf kubernetes kubernetes-client-linux-amd64.tar.gz
+
+RUN set -x \
+  && curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
