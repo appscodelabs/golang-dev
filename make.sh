@@ -15,7 +15,7 @@ function semverParseInto() {
 }
 
 
-TAG=1.15.8
+TAG=1.15.10
 REGISTRY=${REGISTRY:-appscode}
 
 semverParseInto $TAG MAJOR MINOR PATCH SPECIAL
