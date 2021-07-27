@@ -5,21 +5,21 @@ LABEL org.opencontainers.image.source https://github.com/appscodelabs/golang-dev
 RUN set -x \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
-  apt-utils         \
-  bash              \
-  build-essential   \
-  bzip2             \
-  bzr               \
-  ca-certificates   \
-  git               \
-  gnupg             \
-  mercurial         \
-  protobuf-compiler \
-  socat             \
-  upx               \
-  wget              \
-  xz-utils          \
-  zip               \
+    apt-utils         \
+    bash              \
+    build-essential   \
+    bzip2             \
+    bzr               \
+    ca-certificates   \
+    git               \
+    gnupg             \
+    mercurial         \
+    protobuf-compiler \
+    socat             \
+    upx               \
+    wget              \
+    xz-utils          \
+    zip               \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man /tmp/*
 
 # install protobuf
