@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Needed for antipackage with python 2
 from __future__ import absolute_import
