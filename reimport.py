@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 
-# Needed for antipackage with python 2
-from __future__ import absolute_import
-
 import datetime
 import fnmatch
 import glob
@@ -20,21 +17,21 @@ from os.path import expandvars
 def reimport(*paths):
     for p in paths:
         if os.path.isfile(p):
-            print('Reimporting file: ' + p)
+            print(('Reimporting file: ' + p))
             _reimport(p)
         elif os.path.isdir(p):
-            print('Reimporting dir: ' + p)
+            print(('Reimporting dir: ' + p))
             for dir, _, files in os.walk(p):
                 for f in fnmatch.filter(files, '*.go'):
                     _reimport(dir + '/' + f)
         else:
             for f in glob.glob(p):
-                print('Reimporinting file: ' + f)
+                print(('Reimporinting file: ' + f))
                 _reimport(f)
 
 
-BEGIN_IMPORT_REGEX = ur'import \(\s*'
-END_IMPORT_REGEX = ur'\)\s*'
+BEGIN_IMPORT_REGEX = r'import \(\s*'
+END_IMPORT_REGEX = r'\)\s*'
 
 PKG_MAP = {
     'k8s.io/apimachinery/pkg/api/testing/roundtrip': ['k8s.io/apimachinery/pkg/api/apitesting/roundtrip']
@@ -95,7 +92,7 @@ def _reimport(fname):
             elif re.match(BEGIN_IMPORT_REGEX, c) is not None:
                     import_block = True
             else:
-                for cur, nu in replacements.iteritems():
+                for cur, nu in replacements.items():
                     line = line.replace(cur+'.', nu+'.')
             out.append(line)
 
