@@ -1,4 +1,4 @@
-FROM golang:1.17.1
+FROM golang:1.17.2
 
 LABEL org.opencontainers.image.source https://github.com/appscodelabs/golang-dev
 
