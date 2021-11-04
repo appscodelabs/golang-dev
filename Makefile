@@ -3,7 +3,7 @@ SHELL=/bin/bash -o pipefail
 REGISTRY   ?= appscode
 BIN        ?= golang-dev
 IMAGE      := $(REGISTRY)/$(BIN)
-TAG        ?= 1.17.2
+TAG        ?= 1.17.3
 
 DOCKER_PLATFORMS := linux/amd64 linux/arm64
 PLATFORM         ?= $(firstword $(DOCKER_PLATFORMS))
