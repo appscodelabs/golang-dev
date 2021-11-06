@@ -29,6 +29,7 @@ jobs:
       - name: Publish to Docker Registry
         env:
           REGISTRY: appscode
+          SRC_REG: ghcr.io/appscodelabs
           DOCKER_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
           USERNAME: 1gtm
         run: |
