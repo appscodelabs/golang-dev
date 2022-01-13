@@ -41,6 +41,7 @@ RUN set -x \
   && export GOBIN=/usr/local/bin \
   && go install github.com/bwplotka/bingo@latest \
   && bingo get -l github.com/bwplotka/bingo \
+  && bingo get -l github.com/go-delve/delve/cmd/dlv@v1.8.0 \
   && bingo get -l golang.org/x/tools/cmd/goimports \
   && bingo get -l github.com/onsi/ginkgo/ginkgo@v1.15.0 \
   && bingo get -l github.com/appscodelabs/gh-tools@v0.2.10 \
