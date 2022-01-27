@@ -37,11 +37,12 @@ RUN mkdir -p /go/src/github.com/golang \
 RUN set -x \
   && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b /usr/local/bin v1.43.0
 
+//   && bingo get -l github.com/go-delve/delve/cmd/dlv@v1.8.0 \
+
 RUN set -x \
   && export GOBIN=/usr/local/bin \
   && go install github.com/bwplotka/bingo@latest \
   && bingo get -l github.com/bwplotka/bingo \
-  && bingo get -l github.com/go-delve/delve/cmd/dlv@v1.8.0 \
   && bingo get -l golang.org/x/tools/cmd/goimports \
   && bingo get -l github.com/onsi/ginkgo/ginkgo@v1.15.0 \
   && bingo get -l github.com/appscodelabs/gh-tools@v0.2.10 \
