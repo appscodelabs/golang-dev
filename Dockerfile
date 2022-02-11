@@ -1,4 +1,4 @@
-FROM golang:1.17.6
+FROM golang:1.17.7
 
 LABEL org.opencontainers.image.source https://github.com/appscodelabs/golang-dev
 
@@ -49,7 +49,7 @@ RUN set -x \
   && bingo get -l github.com/appscodelabs/ltag@v0.2.0 \
   && bingo get -l github.com/vbatts/git-validation@master \
   && bingo get -l mvdan.cc/sh/v3/cmd/shfmt@v3.3.0 \
-  && bingo get -l kubepack.dev/chart-doc-gen@v0.4.2 \
+  && bingo get -l kubepack.dev/chart-doc-gen@v0.4.4 \
   && bingo get -l github.com/go-bindata/go-bindata/go-bindata@ee3c2418e3682cc4a4e6c5dd1b32d0b98f7e2c55 \
   && export GOBIN=                                \
   && cd /go \
