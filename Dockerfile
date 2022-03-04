@@ -1,4 +1,4 @@
-FROM golang:1.17.7
+FROM golang:1.17.8
 
 LABEL org.opencontainers.image.source https://github.com/appscodelabs/golang-dev
 
@@ -35,7 +35,7 @@ RUN mkdir -p /go/src/github.com/golang \
   && rm -rf /go/pkg /go/src
 
 RUN set -x \
-  && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b /usr/local/bin v1.43.0
+  && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b /usr/local/bin v1.44.2
 
 RUN set -x \
   && export GOBIN=/usr/local/go/bin \
