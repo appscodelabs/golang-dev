@@ -34,8 +34,20 @@ RUN mkdir -p /go/src/github.com/golang \
   && cd /go \
   && rm -rf /go/pkg /go/src
 
+# RUN set -x \
+#  && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b /usr/local/bin v1.44.2
+
+# https://github.com/golangci/golangci-lint/pull/2438#issuecomment-1069262198
 RUN set -x \
-  && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b /usr/local/bin v1.44.2
+  && export GOBIN=/usr/local/go/bin \
+  && mkdir -p /go/src/github.com/golangci \
+  && cd /go/src/github.com/golangci \
+  && git clone https://github.com/golangci/golangci-lint.git \
+  && cd golangci-lint \
+  && git fetch origin refs/pull/2438/merge:go1.18 \
+  && git checkout go1.18 \
+  && go install -v ./cmd/golangci-lint \
+  && export GOBIN=
 
 RUN set -x \
   && export GOBIN=/usr/local/go/bin \
