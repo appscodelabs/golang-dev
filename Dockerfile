@@ -53,20 +53,19 @@ RUN set -x \
   && export GOBIN=/usr/local/go/bin \
   && go install github.com/bwplotka/bingo@latest \
   && bingo get -l github.com/bwplotka/bingo \
-  && bingo get -l github.com/go-delve/delve/cmd/dlv@v1.8.0 \
+  && bingo get -l github.com/go-delve/delve/cmd/dlv@v1.8.2 \
   && bingo get -l golang.org/x/tools/cmd/goimports \
   # replace gofmt with https://github.com/mvdan/gofumpt
   && rm -rf /usr/local/go/bin/gofmt \
   && bingo get -l -n gofmt mvdan.cc/gofumpt@v0.3.0 \
-  && bingo get -l github.com/onsi/ginkgo/ginkgo@v1.15.0 \
-  && bingo get -l github.com/appscodelabs/gh-tools@v0.2.10 \
-  && bingo get -l github.com/appscodelabs/hugo-tools@v0.2.20 \
+  && bingo get -l github.com/onsi/ginkgo/ginkgo@vv1.16.5 \
+  && bingo get -l github.com/appscodelabs/gh-tools@v0.2.12 \
+  && bingo get -l github.com/appscodelabs/hugo-tools@v0.2.21 \
   && bingo get -l github.com/appscodelabs/ltag@v0.2.0 \
   && bingo get -l github.com/vbatts/git-validation@master \
   && bingo get -l mvdan.cc/sh/v3/cmd/shfmt@v3.3.0 \
   && bingo get -l kubepack.dev/chart-doc-gen@v0.4.7 \
-  && bingo get -l github.com/go-bindata/go-bindata/go-bindata@ee3c2418e3682cc4a4e6c5dd1b32d0b98f7e2c55 \
-  && export GOBIN=                                \
+  && export GOBIN= \
   && cd /go \
   && rm -rf /go/pkg /go/src
 
