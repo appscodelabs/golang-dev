@@ -59,8 +59,8 @@ RUN set -x \
   && rm -rf /usr/local/go/bin/gofmt \
   && bingo get -l -n gofmt mvdan.cc/gofumpt@v0.3.0 \
   && bingo get -l github.com/onsi/ginkgo/ginkgo@v1.16.5 \
-  && bingo get -l github.com/appscodelabs/gh-tools@ceba4c5662aa7feb6d589537e1045745b4da4f62 \
-  && bingo get -l github.com/appscodelabs/hugo-tools@719ae309c94c47047284042d0c87f4f970922dae \
+  && bingo get -l github.com/appscodelabs/gh-tools@v0.2.13 \
+  && bingo get -l github.com/appscodelabs/hugo-tools@v0.2.22 \
   && bingo get -l github.com/appscodelabs/ltag@v0.2.0 \
   && bingo get -l github.com/vbatts/git-validation@master \
   && bingo get -l mvdan.cc/sh/v3/cmd/shfmt@v3.3.0 \
