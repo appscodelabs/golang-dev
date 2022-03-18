@@ -65,6 +65,7 @@ RUN set -x \
   && bingo get -l github.com/vbatts/git-validation@master \
   && bingo get -l mvdan.cc/sh/v3/cmd/shfmt@v3.3.0 \
   && bingo get -l kubepack.dev/chart-doc-gen@v0.4.7 \
+  && bingo get -l github.com/go-bindata/go-bindata/go-bindata@latest \
   && export GOBIN= \
   && cd /go \
   && rm -rf /go/pkg /go/src
