@@ -1,5 +1,9 @@
 FROM golang:1.18.0
 
+ARG TARGETOS
+ARG TARGETARCH
+ARG VERSION
+
 LABEL org.opencontainers.image.source https://github.com/appscodelabs/golang-dev
 
 RUN set -x \
@@ -74,11 +78,11 @@ COPY reimport.py /usr/local/bin/reimport.py
 COPY reimport3.py /usr/local/bin/reimport3.py
 
 RUN set -x                                        \
-  && wget https://dl.k8s.io/$(curl -fsSL https://storage.googleapis.com/kubernetes-release/release/stable.txt)/kubernetes-client-linux-amd64.tar.gz \
-  && tar -xzvf kubernetes-client-linux-amd64.tar.gz \
+  && wget https://dl.k8s.io/$(curl -fsSL https://storage.googleapis.com/kubernetes-release/release/stable.txt)/kubernetes-client-linux-${TARGETARCH}.tar.gz \
+  && tar -xzvf kubernetes-client-linux-${TARGETARCH}.tar.gz \
   && mv kubernetes/client/bin/kubectl /usr/bin/kubectl \
   && chmod +x /usr/bin/kubectl \
-  && rm -rf kubernetes kubernetes-client-linux-amd64.tar.gz
+  && rm -rf kubernetes kubernetes-client-linux-${TARGETARCH}.tar.gz
 
 RUN set -x \
   && curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
