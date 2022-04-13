@@ -1,4 +1,4 @@
-FROM golang:1.18.0
+FROM golang:1.18.1
 
 ARG TARGETOS
 ARG TARGETARCH
@@ -61,13 +61,13 @@ RUN set -x \
   && bingo get -l golang.org/x/tools/cmd/goimports \
   # replace gofmt with https://github.com/mvdan/gofumpt
   && rm -rf /usr/local/go/bin/gofmt \
-  && bingo get -l -n gofmt mvdan.cc/gofumpt@v0.3.0 \
+  && bingo get -l -n gofmt mvdan.cc/gofumpt@v0.3.1 \
   && bingo get -l github.com/onsi/ginkgo/ginkgo@v1.16.5 \
   && bingo get -l github.com/appscodelabs/gh-tools@v0.2.13 \
   && bingo get -l github.com/appscodelabs/hugo-tools@v0.2.22 \
   && bingo get -l github.com/appscodelabs/ltag@v0.2.0 \
   && bingo get -l github.com/vbatts/git-validation@master \
-  && bingo get -l mvdan.cc/sh/v3/cmd/shfmt@v3.3.0 \
+  && bingo get -l mvdan.cc/sh/v3/cmd/shfmt@v3.4.3 \
   && bingo get -l kubepack.dev/chart-doc-gen@v0.4.7 \
   && bingo get -l github.com/go-bindata/go-bindata/go-bindata@latest \
   && export GOBIN= \
