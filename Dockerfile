@@ -1,4 +1,4 @@
-FROM golang:1.18.1
+FROM golang:1.18.2
 
 ARG TARGETOS
 ARG TARGETARCH
@@ -39,7 +39,7 @@ RUN mkdir -p /go/src/github.com/golang \
   && rm -rf /go/pkg /go/src
 
 RUN set -x \
-  && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b /usr/local/bin v1.45.2
+  && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b /usr/local/bin v1.46.0
 
 # https://github.com/golangci/golangci-lint/pull/2438#issuecomment-1069262198
 # RUN set -x \
@@ -64,7 +64,7 @@ RUN set -x \
   && bingo get -l -n gofmt mvdan.cc/gofumpt@v0.3.1 \
   && bingo get -l github.com/onsi/ginkgo/ginkgo@v1.16.5 \
   && bingo get -l github.com/appscodelabs/gh-tools@v0.2.13 \
-  && bingo get -l github.com/appscodelabs/hugo-tools@v0.2.22 \
+  && bingo get -l github.com/appscodelabs/hugo-tools@v0.2.23 \
   && bingo get -l github.com/appscodelabs/ltag@v0.2.0 \
   && bingo get -l github.com/vbatts/git-validation@master \
   && bingo get -l mvdan.cc/sh/v3/cmd/shfmt@v3.4.3 \
