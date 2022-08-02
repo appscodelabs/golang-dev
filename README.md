@@ -3,5 +3,5 @@
 GO Docker image used for building AppsCode projects
 
 ```console
-docker pull appscode/golang-dev:1.18.5
+docker pull appscode/golang-dev:1.19.0
 ```
