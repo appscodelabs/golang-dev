@@ -70,7 +70,7 @@ RUN set -x \
   && bingo get -l mvdan.cc/sh/v3/cmd/shfmt@v3.4.3 \
   && bingo get -l kubepack.dev/chart-doc-gen@v0.4.7 \
   && bingo get -l github.com/go-bindata/go-bindata/go-bindata@latest \
-  && bingo get -l golang.org/x/vuln/cmd/govulncheck@latest \
+  && go install golang.org/x/vuln/cmd/govulncheck@latest \
   && export GOBIN= \
   && cd /go \
   && rm -rf /go/pkg /go/src
