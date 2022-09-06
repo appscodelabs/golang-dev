@@ -61,6 +61,7 @@ RUN set -x \
   && bingo get -l golang.org/x/tools/cmd/goimports \
   # replace gofmt with https://github.com/mvdan/gofumpt
   && rm -rf /usr/local/go/bin/gofmt \
+  && bingo get -l golang.org/x/vuln/cmd/govulncheck@latest \
   && bingo get -l -n gofmt mvdan.cc/gofumpt@v0.3.1 \
   && bingo get -l github.com/onsi/ginkgo/v2/ginkgo@v2.1.4 \
   && bingo get -l github.com/appscodelabs/gh-tools@v0.2.13 \
