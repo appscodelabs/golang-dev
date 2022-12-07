@@ -64,7 +64,7 @@ RUN set -x \
   && bingo get -l -n gofmt mvdan.cc/gofumpt@v0.4.0 \
   && bingo get -l github.com/onsi/ginkgo/v2/ginkgo@v2.1.4 \
   && bingo get -l github.com/appscodelabs/gh-tools@v0.2.13 \
-  && bingo get -l github.com/appscodelabs/hugo-tools@v0.2.23 \
+  && bingo get -l github.com/appscodelabs/hugo-tools@v0.2.24 \
   && bingo get -l github.com/appscodelabs/ltag@v0.2.0 \
   && bingo get -l github.com/vbatts/git-validation@master \
   && bingo get -l mvdan.cc/sh/v3/cmd/shfmt@v3.4.3 \
