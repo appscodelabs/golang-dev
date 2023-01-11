@@ -3,7 +3,7 @@ SHELL=/bin/bash -o pipefail
 REGISTRY   ?= appscode
 BIN        ?= golang-dev
 IMAGE      := $(REGISTRY)/$(BIN)
-VERSION    ?= 1.19.4
+VERSION    ?= 1.19.5
 SRC_REG    ?=
 
 DOCKER_PLATFORMS := linux/amd64 linux/arm64
