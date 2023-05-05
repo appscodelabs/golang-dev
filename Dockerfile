@@ -27,6 +27,12 @@ RUN set -x \
     zip               \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man /tmp/*
 
+# https://candid.technology/error-obtaining-vcs-status-exit-status-128/
+# https://stackoverflow.com/a/73100228
+RUN set -x \
+  && git config --global --add safe.directory '*' \
+  && cp /root/.gitconfig /.gitconfig
+
 # install protobuf
 RUN mkdir -p /go/src/github.com/golang \
   && cd /go/src/github.com/golang \
