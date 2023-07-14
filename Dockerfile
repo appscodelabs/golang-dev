@@ -21,7 +21,6 @@ RUN set -x \
     mercurial         \
     protobuf-compiler \
     socat             \
-    upx               \
     wget              \
     xz-utils          \
     zip               \
