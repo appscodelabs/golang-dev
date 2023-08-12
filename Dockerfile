@@ -60,8 +60,8 @@ RUN set -x \
 
 RUN set -x \
   && export GOBIN=/usr/local/go/bin \
-  && go install github.com/bwplotka/bingo@latest \
-  && bingo get -l github.com/bwplotka/bingo \
+  && go install github.com/gomodules/bingo@go121 \
+  && bingo get -l github.com/gomodules/bingo@go121 \
   && bingo get -l github.com/go-delve/delve/cmd/dlv@v1.8.2 \
   && bingo get -l golang.org/x/tools/cmd/goimports \
   # replace gofmt with https://github.com/mvdan/gofumpt
