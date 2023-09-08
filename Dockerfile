@@ -92,4 +92,6 @@ RUN set -x                                        \
   && rm -rf kubernetes kubernetes-client-linux-${TARGETARCH}.tar.gz
 
 RUN set -x \
-  && curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+  && cd /usr/local/bin \
+  && curl -fsSLO https://github.com/x-helm/helm/releases/latest/download/helm \
+  && chmod +x helm
