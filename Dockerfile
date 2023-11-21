@@ -44,7 +44,7 @@ RUN mkdir -p /go/src/github.com/golang \
   && rm -rf /go/pkg /go/src
 
 RUN set -x \
-  && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b /usr/local/bin v1.53.3
+  && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b /usr/local/bin v1.55.2
 
 # https://github.com/golangci/golangci-lint/pull/2438#issuecomment-1069262198
 # RUN set -x \
