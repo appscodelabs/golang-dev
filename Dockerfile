@@ -93,5 +93,5 @@ RUN set -x                                        \
 
 RUN set -x \
   && cd /usr/local/bin \
-  && curl -fsSLO https://github.com/x-helm/helm/releases/latest/download/helm \
+  && curl -fsSL -o helm https://github.com/x-helm/helm/releases/download/ac-1.29.0/helm-$TARGETOS-$TARGETARCH \
   && chmod +x helm
