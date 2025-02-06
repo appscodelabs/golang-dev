@@ -13,7 +13,6 @@ RUN set -x \
     bash              \
     build-essential   \
     bzip2             \
-    bzr               \
     ca-certificates   \
     curl              \
     git               \
@@ -59,20 +58,21 @@ RUN set -x \
 #   && export GOBIN=
 
 RUN set -x \
+  && export CGO_ENABLED=0 \
   && export GOBIN=/usr/local/go/bin \
-  && go install github.com/bwplotka/bingo@main \
-  && bingo get -l github.com/bwplotka/bingo@main \
-  && bingo get -l github.com/go-delve/delve/cmd/dlv@v1.22.1 \
+  && go install github.com/bwplotka/bingo@latest \
+  && bingo get -l github.com/bwplotka/bingo \
+  && bingo get -l github.com/go-delve/delve/cmd/dlv@v1.24.0 \
   && bingo get -l golang.org/x/tools/cmd/goimports \
   # replace gofmt with https://github.com/mvdan/gofumpt
   && rm -rf /usr/local/go/bin/gofmt \
-  && bingo get -l -n gofmt mvdan.cc/gofumpt@v0.4.0 \
-  && bingo get -l github.com/onsi/ginkgo/v2/ginkgo@v2.1.4 \
-  && bingo get -l github.com/appscodelabs/gh-tools@v0.2.13 \
-  && bingo get -l github.com/appscodelabs/hugo-tools@v0.2.25 \
+  && bingo get -l -n gofmt mvdan.cc/gofumpt@v0.7.0 \
+  && bingo get -l github.com/onsi/ginkgo/v2/ginkgo@v2.22.2 \
+  && bingo get -l github.com/appscodelabs/gh-tools@v0.2.17 \
+  && bingo get -l github.com/appscodelabs/hugo-tools@v0.2.33 \
   && bingo get -l github.com/appscodelabs/ltag@v0.2.0 \
   && bingo get -l github.com/vbatts/git-validation@master \
-  && bingo get -l mvdan.cc/sh/v3/cmd/shfmt@v3.4.3 \
+  && bingo get -l mvdan.cc/sh/v3/cmd/shfmt@v3.10.0 \
   && bingo get -l kubepack.dev/chart-doc-gen@v0.4.7 \
   && bingo get -l github.com/go-bindata/go-bindata/go-bindata@latest \
   && go install golang.org/x/vuln/cmd/govulncheck@latest \
