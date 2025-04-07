@@ -1,4 +1,4 @@
-FROM golang:1.24.1
+FROM golang:1.24.2
 
 ARG TARGETOS
 ARG TARGETARCH
@@ -62,14 +62,14 @@ RUN set -x \
   && export GOBIN=/usr/local/go/bin \
   && go install github.com/bwplotka/bingo@latest \
   && bingo get -l github.com/bwplotka/bingo \
-  && bingo get -l github.com/go-delve/delve/cmd/dlv@v1.24.0 \
+  && bingo get -l github.com/go-delve/delve/cmd/dlv@v1.24.1 \
   && bingo get -l golang.org/x/tools/cmd/goimports \
   # replace gofmt with https://github.com/mvdan/gofumpt
   && rm -rf /usr/local/go/bin/gofmt \
   && bingo get -l -n gofmt mvdan.cc/gofumpt@v0.7.0 \
   && bingo get -l github.com/onsi/ginkgo/v2/ginkgo@v2.22.2 \
   && bingo get -l github.com/appscodelabs/gh-tools@v0.2.17 \
-  && bingo get -l github.com/appscodelabs/hugo-tools@v0.2.33 \
+  && bingo get -l github.com/appscodelabs/hugo-tools@v0.2.34 \
   && bingo get -l github.com/appscodelabs/ltag@v0.2.0 \
   && bingo get -l github.com/vbatts/git-validation@master \
   && bingo get -l mvdan.cc/sh/v3/cmd/shfmt@v3.10.0 \
