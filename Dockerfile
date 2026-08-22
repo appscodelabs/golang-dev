@@ -1,4 +1,4 @@
-FROM golang:1.26.6
+FROM golang:1.26.7
 
 ARG TARGETOS
 ARG TARGETARCH
